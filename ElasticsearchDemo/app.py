@@ -33,4 +33,26 @@ def post_data():
     return jsonify(result)
 
 
+@app.route("/postData2", methods=['POST'])
+def post_data2():
+    # id = request.form['id']
+    # status = request.form['status']
+    # strength = request.form['strength']
+
+    uid = uuid.uuid1()
+
+    id = uid
+    status = "good : "+str(uid)
+    strength = "strong : "+str(uid)
+
+    body = {
+        'id': id,
+        'status': status,
+        'strength': strength
+    }
+
+    result = es.index(index='status', doc_type='device', id=id, body=body)
+    return jsonify(result)
+
+
 app.run(port=5000, debug=True)
