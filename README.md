@@ -5,3 +5,4 @@
 4) ToDoApplication : A To Do check list application 
 5) Kafka : Kafka producer and consumer implementation
 6) ElasticsearchDemo : Using elasticsearch to store data
+7) DeviceMonitoring : A Flask application to monitor the device data using kafka, elasticsearch, gunicorn and nginx
